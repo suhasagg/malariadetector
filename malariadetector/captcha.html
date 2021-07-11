@@ -1,0 +1,53 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Play</title>
+<link href="css/play.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/image.js"></script>
+<script type="text/javascript" src="js/play.js"></script>
+<script src="js/countdown.js" type="text/javascript" charset="utf-8"></script>
+<script>
+
+function getTicket(){
+	$('#ticket').click(function(){
+		$.get("http://localhost:8081/koolcaptcha/ticket?ip=127.0.0.1&alt=json&apikey=ce9fbdb76b6530314e2ac9bbee8fa809579b3482&mode=0", function(data) {
+			if (data.type == "image/jpeg"){
+			$('#gamecenter').html(
+			                     '<div id="image">'+
+								 '<img id="gameimg" src="'+data.url+'" />'+
+					             '</div>'+
+			                     '<div id="input">'+
+								'<input id="labelbox" type="text" />'+
+								'<input id="submit" class="button" type="button" value="Submit" />'+
+								'<input id="Reload" class="button" type="button" value="Reload" /> '+
+								'</div>');
+			                    }
+
+		     if (data.type == "mp4"){
+		     $('#gamecenter').html(
+			 			                     '<div id="video">'+
+			 								 "<video width="\320\" height=\"240\" controls><source src=\"http://www.w3schools.com/html/movie.mp4\" +\" type= \"video/mp4\">"+"</video>"+
+			 					             '</div>'+
+			 			                     '<div id="input">'+
+			 								'<input id="labelbox" type="text" />'+
+			 								'<input id="submit" class="button" type="button" value="Submit" />'+
+			 								'<input id="Reload" class="button" type="button" value="Reload" /> '+
+								'</div>')
+
+
+		     }, "json");
+         </script>
+         </head>
+
+         <body>
+		     <div id="gamecenter">
+
+
+           </div>
+
+		   <div id="gamecenter">
+
+           </div>
+           </body>
+         </html>
