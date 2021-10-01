@@ -6,6 +6,8 @@ Blood sample infected with Plasmodium parasite sample.
 
 Blood film slides being shown to the players to identify infected blood.
 
+Multiplayer game to identify malaria positive slides.
+
 ![alt text](https://i.ibb.co/sJZNVc1/Embedded-Image.png)
 
 
